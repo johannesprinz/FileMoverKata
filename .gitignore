@@ -2,3 +2,5 @@
 */obj/
 *.suo
 *.jmconfig
+*.ncrunch*
+*.crunchsolution.cache
