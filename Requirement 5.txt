@@ -1,0 +1,5 @@
+
+
+Extend to be able to specify the source directory where the files will be moved from on the commandline
+with "-s=[source dir]"
+   

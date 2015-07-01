@@ -1,0 +1,6 @@
+
+Extend so that the source and target of all file moves are written to a logger
+
+NOTE: The logger implementation does not have to really log but treat it appropriately and access it
+      via an abstraction of some sort
+

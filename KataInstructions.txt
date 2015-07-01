@@ -13,33 +13,6 @@ requirement is visible at any one time.
 Requirements
 ------------
 
-
-1. Extend to be able to move a different file extension from the source directory to the target directory by
-   specifying the extension on the commandline with "-i=[extension]"
-
-
-
-2. Extend so that if a file with the same name already exists in the target directory, it is renamed by 
-   appending ".[date].BACKUP" where [date] is the format YYYYMMDDHHSS
-   
-
-
-3. Extend so that the source and target of all file moves are written to a logger
-   NOTE: The logger implementation does not have to really log but treat it appropriately and access it
-         via an abstraction of some sort
-
-
-
-4. Extend so that the age criteria for moving files can be overriden in days from the commandline with "-d [days]"
-         
-
-
-5. Extend to be able to specify the source directory where the files will be moved from on the commandline
-   with "-s=[source dir]"
-   
-
-
-6. Extend to be able to specify multiple file extensions using a semicolon delimiter with the -i commandline arg
-
+Are in individual files so that each requirement can be worked through without foreward knowledge of those to come
 
    

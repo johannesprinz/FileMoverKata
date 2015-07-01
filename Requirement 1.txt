@@ -1,0 +1,3 @@
+
+Extend to be able to move a different file extension from the source directory to the target directory by
+specifying the extension on the commandline with "-i=[extension]"

@@ -1,0 +1,4 @@
+
+Extend so that if a file with the same name already exists in the target directory, it is renamed by 
+appending ".[date].BACKUP" where [date] is the format YYYYMMDDHHSS
+   
