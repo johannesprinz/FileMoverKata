@@ -2,6 +2,6 @@
 {
     public interface IDirectoryProvider
     {
-        string[] GetFiles(string source, string filter);
+        string[] GetFiles(string path, string filter);
     }
 }

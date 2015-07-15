@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using FileMoverKata.Console;
 using FluentAssertions;
+using Moq;
 
 namespace FileMoverKata.Tests
 {
@@ -15,5 +16,14 @@ namespace FileMoverKata.Tests
             Action action = () => new FileMover();
             action.ShouldNotThrow();
         }
+
+        [Test]
+        public void Given_NullSource_ItTrowsArgumentNullException()
+        {
+            Action action = () => new FileMover().MoveFiles(null, It.IsAny<string>(), It.IsAny<string>());
+            action.ShouldThrow<ArgumentNullException>().WithMessage("Value cannot be null.\r\nParameter name: path");
+        }
     }
 }
+
+

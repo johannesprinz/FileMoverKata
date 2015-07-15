@@ -39,9 +39,9 @@ namespace FileMoverKata.Console
 
     public class DirectoryProvider : IDirectoryProvider
     {
-        public string[] GetFiles (string source, string filter)
+        public string[] GetFiles (string path, string filter)
         {
-            return Directory.GetFiles(source, filter);
+            return Directory.GetFiles(path, filter);
         }
     }
 
