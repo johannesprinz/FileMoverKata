@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FileMoverKata.Console
 {
@@ -11,12 +7,24 @@ namespace FileMoverKata.Console
     {
         static void Main(string[] args)
         {
-            string[] logFiles = Directory.GetFiles(@"C:\SourceDirectory", "*.log");
+            var source = @"C:\SourceDirectory";
+            var target = @"C:\TargetDirectory";
+            var filter = "*.log";
+            var fileMover = new FileMover();
+            fileMover.MoveFiles(source, target, filter);
+        }
+    }
+
+    internal class FileMover
+    {
+        public void MoveFiles(string source, string target, string filter)
+        {
+            string[] logFiles = Directory.GetFiles(source, filter);
 
             foreach (var file in logFiles)
             {
                 if (File.GetLastWriteTime(file) < DateTime.Now - TimeSpan.FromDays(1))
-                    File.Move(file, Path.Combine(@"C:\TargetDirectory", Path.GetFileName(file)));
+                    File.Move(file, Path.Combine(target, Path.GetFileName(file)));
             }
         }
     }

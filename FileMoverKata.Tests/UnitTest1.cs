@@ -10,6 +10,7 @@ namespace FileMoverKata.Tests
         [Test]
         public void TestMethod1()
         {
+            
         }
     }
 }
