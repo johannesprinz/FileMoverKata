@@ -18,12 +18,12 @@ namespace FileMoverKata.Console
     internal class FileMover
     {
         IDirectoryProvider directoryProvider;
+        IFileProvider fileProvider;
 
-        public FileMover(IDirectoryProvider directoryProvider = null)
+        public FileMover(IDirectoryProvider directoryProvider = null, IFileProvider fileProvider = null)
         {
-            if (directoryProvider == null)
-                this.directoryProvider = new DirectoryProvider();
-            else this.directoryProvider = directoryProvider;
+            this.directoryProvider = directoryProvider ?? new DirectoryProvider();
+            this.fileProvider = fileProvider ?? new FileProvider(); 
         }
         public void MoveFiles(string source, string target, string filter)
         {
@@ -42,6 +42,19 @@ namespace FileMoverKata.Console
         public string[] GetFiles (string source, string filter)
         {
             return Directory.GetFiles(source, filter);
+        }
+    }
+
+    public class FileProvider : IFileProvider
+    {
+        public DateTime GetLastWriteTime(string file)
+        {
+            return File.GetLastWriteTime(file);
+        }
+
+        public void Move(string sourceFile, string targetFile)
+        {
+            File.Move(sourceFile, targetFile);
         }
     }
 }
