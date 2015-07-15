@@ -1,16 +1,19 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
+using FileMoverKata.Console;
+using FluentAssertions;
 
 namespace FileMoverKata.Tests
 {
     [TestFixture]
-    public class UnitTest1
+    public class FileMoverTests
     {
         [Test]
-        public void TestMethod1()
+        public void Given_NoDependencies_ItStillConstructs()
         {
-            
+            Action action = () => new FileMover();
+            action.ShouldNotThrow();
         }
     }
 }

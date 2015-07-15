@@ -1,6 +1,6 @@
 ﻿namespace FileMoverKata.Console
 {
-    internal interface IDirectoryProvider
+    public interface IDirectoryProvider
     {
         string[] GetFiles(string source, string filter);
     }

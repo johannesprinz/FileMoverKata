@@ -3,7 +3,7 @@ using System.IO;
 
 namespace FileMoverKata.Console
 {
-    class Program
+   public class Program
     {
         static void Main(string[] args)
         {
@@ -15,7 +15,7 @@ namespace FileMoverKata.Console
         }
     }
 
-    internal class FileMover
+    public class FileMover
     {
         IDirectoryProvider directoryProvider;
         IFileProvider fileProvider;
@@ -37,7 +37,7 @@ namespace FileMoverKata.Console
         }
     }
 
-    internal class DirectoryProvider : IDirectoryProvider
+    public class DirectoryProvider : IDirectoryProvider
     {
         public string[] GetFiles (string source, string filter)
         {
